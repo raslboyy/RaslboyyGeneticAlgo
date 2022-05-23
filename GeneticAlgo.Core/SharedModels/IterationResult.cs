@@ -1,4 +1,4 @@
-namespace GeneticAlgo.Shared.Models;
+namespace GeneticAlgo.Core.SharedModels;
 
 public enum IterationResult
 {

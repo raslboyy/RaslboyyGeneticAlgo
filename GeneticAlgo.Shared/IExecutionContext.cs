@@ -1,4 +1,4 @@
-﻿using GeneticAlgo.Shared.Models;
+﻿using GeneticAlgo.Core.SharedModels;
 
 namespace GeneticAlgo.Shared
 {

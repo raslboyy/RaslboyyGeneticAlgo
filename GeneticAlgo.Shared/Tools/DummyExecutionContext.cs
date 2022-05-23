@@ -1,4 +1,6 @@
+using GeneticAlgo.Core.SharedModels;
 using GeneticAlgo.Shared.Models;
+using Serilog;
 
 namespace GeneticAlgo.Shared.Tools;
 
@@ -36,6 +38,6 @@ public class DummyExecutionContext : IExecutionContext
             .Select(_ => new BarrierCircle(new Point(Next, Next), 10 * Next))
             .ToArray();
 
-        statisticsConsumer.Consume(statistics, circles);
+        //statisticsConsumer.Consume(statistics, Configuration.GetInstance().Circles);
     }
 }

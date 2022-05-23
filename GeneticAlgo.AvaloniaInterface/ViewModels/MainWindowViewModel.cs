@@ -1,6 +1,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 using Avalonia;
+using GeneticAlgo.Core.SharedModels;
 using GeneticAlgo.Shared;
 using GeneticAlgo.Shared.Models;
 using GeneticAlgo.UIShared;

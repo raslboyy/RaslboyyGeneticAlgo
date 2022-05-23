@@ -1,8 +1,8 @@
-﻿using GeneticAlgo.Shared.Models;
+﻿using GeneticAlgo.Core.SharedModels;
 
 namespace GeneticAlgo.Shared;
 
 public interface IStatisticsConsumer
 {
-    void Consume(IReadOnlyCollection<Statistic> statistics, IReadOnlyCollection<BarrierCircle> barriers);
+    void Consume(IterationStatistic statistic, IReadOnlyCollection<BarrierCircle> barriers);
 }
