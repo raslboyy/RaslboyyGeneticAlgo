@@ -1,4 +1,5 @@
 ﻿using GeneticAlgo.Core.SharedModels;
+using System.Buffers;
 
 namespace GeneticAlgo.Core.Models
 {
