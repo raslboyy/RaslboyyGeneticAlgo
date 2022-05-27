@@ -51,4 +51,9 @@
 - Использовать ArrayPool
 
 ![image](https://user-images.githubusercontent.com/33222839/170626500-181a1b31-573b-444f-872b-5f2a50c559e1.png)
-![PR](https://github.com/is-tech-y24-1/RaslboyyGeneticAlgo/pull/1)
+[PR](https://github.com/is-tech-y24-1/RaslboyyGeneticAlgo/pull/1)
+
+- Костыли
+![image](https://user-images.githubusercontent.com/33222839/170632756-cf1b6c74-11c5-4e26-9c56-4f83d33fd683.png)
+[PR](https://github.com/is-tech-y24-1/RaslboyyGeneticAlgo/pull/2)
+
