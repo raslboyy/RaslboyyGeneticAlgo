@@ -10,6 +10,7 @@ namespace GeneticAlgo.Core.Models.PopulationBuilderModels
         public int MaxLenOfChromosome { get; set; } = 1000;
         public int Size { get; set; } = 500;
         public List<Chromosome> RandomSurvived { get; private set; } = new ();
+        private HashSet<int> _isUsedForRandomSurvive { get; set; } = new ();
         public Population()
         {
             for (int i = 0; i < Size; i++)
@@ -69,9 +70,10 @@ namespace GeneticAlgo.Core.Models.PopulationBuilderModels
             int len = (int)Math.Floor(Size * (1 - killRate));
             while (Chromosomes.Count < Size)
             {
-                Chromosomes.Add(new Chromosome(Chromosomes[_random.Next(0, len)]));
+                Chromosomes.Add(new Chromosome(Chromosomes[_random.Next(0, len)], RandomSurvived, _isUsedForRandomSurvive));
                 mutationAlgorithm.Mutate(Chromosomes[^1], mutationAddGenCoefficient);
             }
+            _isUsedForRandomSurvive.Clear();
         }
 
         public IterationStatistic Evaluation(IFitnessFunction fitnessFunction)
@@ -112,6 +114,7 @@ namespace GeneticAlgo.Core.Models.PopulationBuilderModels
             for (int i = 0; i < len; i++)
             {
                 Chromosomes.Add(RandomSurvived[MyRandom.GetInstance().Next(RandomSurvived.Count)]);
+                _isUsedForRandomSurvive.Add(i);
             }
         }
     }

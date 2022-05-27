@@ -1,5 +1,4 @@
 ﻿using GeneticAlgo.Core.SharedModels;
-using System.Buffers;
 
 namespace GeneticAlgo.Core.Models
 {
@@ -14,8 +13,24 @@ namespace GeneticAlgo.Core.Models
                 Gens.Add(new Gen(0, 0));
         }
 
-        public Chromosome(Chromosome other)
+        public Chromosome(Chromosome other, List<Chromosome> pool, HashSet<int> used)
         {
+            for (int i = 0; i < pool.Count; i++)
+            {
+                if (!used.Contains(i))
+                {
+                    pool[i].Gens.RemoveAll(a => true);
+                    Gens = pool[i].Gens;
+
+                    foreach(Gen gen in other.Gens)
+                    {
+                        Gens.Add(gen);
+                    }
+
+                    used.Add(i);
+                    return;
+                }
+            }
             Gens = new List<Gen>(other.Gens);
         }
 
