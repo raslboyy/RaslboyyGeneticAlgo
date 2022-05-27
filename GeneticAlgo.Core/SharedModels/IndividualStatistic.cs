@@ -7,4 +7,4 @@ using System.Threading.Tasks;
 
 namespace GeneticAlgo.Core.SharedModels;
 
-public record struct IndividualStatistic(List<Point> Points);
+public record struct IndividualStatistic(Point?[] Points);
