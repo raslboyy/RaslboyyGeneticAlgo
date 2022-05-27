@@ -28,9 +28,19 @@ namespace GeneticAlgo.Core.Models.PopulationBuilderModels
         public void Kill(IFitnessFunction fitnessFunction, double killRate)
         {
             int size = (int)Math.Floor(Size * (1 - killRate));
-            Chromosomes = Chromosomes
-                .OrderBy(ind => fitnessFunction.Calculate(ind))
-                .ToList();
+            var fromPool = ArrayPool<Chromosome>.Shared.Rent(Chromosomes.Count);
+            int i = 0;
+            foreach (var ind in Chromosomes)
+            {
+                fromPool[i++] = ind;
+            }
+            i = 0;
+            foreach (var ind in fromPool.OrderBy(ind => ind == null ? 1000000000 : fitnessFunction.Calculate(ind)))
+            {
+                Chromosomes[i++] = ind;
+                if (i == Chromosomes.Count)
+                    break;
+            }
             RandomSurvived = Chromosomes.GetRange(size, Size - size);
             Chromosomes.RemoveRange(size, Size - size);
         }
@@ -78,13 +88,20 @@ namespace GeneticAlgo.Core.Models.PopulationBuilderModels
                     );
                 double x = 0;
                 double y = 0;
+                var shared = ArrayPool<Point?>.Shared;
+                var points = shared.Rent(individual.Gens.Count);
+                for (int i = 0; i < individual.Gens.Count; i++)
+                {
+                    points[i] = new Point(x += individual.Gens[i].R.X, y += individual.Gens[i].R.Y);
+                }
                 statistic.IndividualStatistics.Add(new IndividualStatistic(
-                    individual.Gens.ToList().ConvertAll(chromosome => new Point(x += chromosome.R.X, y += chromosome.R.Y))
+                    points
                     ));
-                if (Math.Abs(statistic.Statictics.Last().Fitness) < Configuration.GetInstance().Eps)
+                if (Math.Abs(Point.GetDistance(new Point(1, 1), individual.GetPosition())) < Configuration.GetInstance().Eps)
                 {
                     statistic.Result = IterationResult.SolutionFound;
                 }
+                shared.Return(points);
             }
             return statistic;
         }
