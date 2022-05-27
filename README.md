@@ -57,6 +57,8 @@
 ![image](https://user-images.githubusercontent.com/33222839/170632756-cf1b6c74-11c5-4e26-9c56-4f83d33fd683.png)
 [PR](https://github.com/is-tech-y24-1/RaslboyyGeneticAlgo/pull/2)
 
+![image](https://user-images.githubusercontent.com/33222839/170634728-dbbbd54b-2239-441c-a664-a30c03be7eca.png)
+
 # Результирующие бенчмарки
 |  Method | PopulationSize | KillRate | RandomSurviveRate |       Mean |       Error |      StdDev |   Gen 0 |   Gen 1 | Allocated |
 |-------- |--------------- |--------- |------------------ |-----------:|------------:|------------:|--------:|--------:|----------:|
