@@ -53,7 +53,7 @@ public class PlotStatisticConsumer : IStatisticsConsumer
                 Color = color
             });
             ((LineSeries)_series.Series[^1]).Points.Add(new DataPoint(0, 0));
-            individualStatistics[i].Points.ForEach(point => ((LineSeries)_series.Series[^1]).Points.Add(new DataPoint(point.X, point.Y)));
+            //individualStatistics[i].Points.ForEach(point => ((LineSeries)_series.Series[^1]).Points.Add(new DataPoint(point.X, point.Y)));
         }
 
         for (int i = 0; i < individualStatistics.Count && allStatistic.Result == IterationResult.SolutionFound; i++)
@@ -65,7 +65,7 @@ public class PlotStatisticConsumer : IStatisticsConsumer
                     Color = OxyColors.Black
                 });
                 ((LineSeries)_series.Series[^1]).Points.Add(new DataPoint(0, 0));
-                individualStatistics[i].Points.ForEach(point => ((LineSeries)_series.Series[^1]).Points.Add(new DataPoint(point.X, point.Y)));
+                //individualStatistics[i].Points.ForEach(point => ((LineSeries)_series.Series[^1]).Points.Add(new DataPoint(point.X, point.Y)));
             }
         }
 

@@ -1,7 +1,9 @@
 ﻿namespace GeneticAlgo.Core.SharedModels;
-public class IterationStatistic
+public struct IterationStatistic
 {
-    public IterationResult Result;
+    public IterationResult Result = IterationResult.IterationFinished;
     public List<Statistic> Statictics = new();
     public List<IndividualStatistic> IndividualStatistics = new();
+
+    public IterationStatistic() {}
 }

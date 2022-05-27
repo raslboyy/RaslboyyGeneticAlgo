@@ -18,10 +18,6 @@ public class SimpleExecutionContext : IExecutionContext
     }
     public void ReportStatistics(IStatisticsConsumer statisticsConsumer)
     {
-        if (_lastIterationStatistic == null)
-        {
-            throw new Exception("No iteration happened yet.");
-        }
         statisticsConsumer.Consume(_lastIterationStatistic, Configuration.GetInstance().Circles);
     }
     public void Reset(GeneticAlgorithmBuilder builder)

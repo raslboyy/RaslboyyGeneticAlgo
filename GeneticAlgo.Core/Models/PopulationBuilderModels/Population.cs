@@ -78,7 +78,10 @@ namespace GeneticAlgo.Core.Models.PopulationBuilderModels
 
         public IterationStatistic Evaluation(IFitnessFunction fitnessFunction)
         {
-            var statistic = new IterationStatistic();
+            var statistic = new IterationStatistic()
+            {
+                Statictics = new List<Statistic>(Chromosomes.Count)
+            };
             int id = 0;
             statistic.Result = IterationResult.IterationFinished;
             foreach (var individual in Chromosomes)
