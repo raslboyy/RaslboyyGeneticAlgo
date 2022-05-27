@@ -20,7 +20,7 @@
         <Button Content="Stop" HorizontalAlignment="Left" Margin="10,35,0,0" VerticalAlignment="Top" Width="134" Click="Button_Click_Stop"/>
         <Button Content="NextStep" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top" Width="134" Click="Button_Click_NextStep"/>
         <Button Content="Reset" HorizontalAlignment="Left" Margin="10,85,0,0" VerticalAlignment="Top" Click="Button_Click_Reset" Width="134"/>
-        <Slider HorizontalAlignment="Center" Margin="0,516,0,0" VerticalAlignment="Top" Width="950" Height="30" Value="1" Maximum="15" ValueChanged="Slider_ValueChanged"/>
+        <Slider HorizontalAlignment="Center" Margin="0,516,0,0" VerticalAlignment="Top" Width="950" Height="30" Value="1" Maximum="200" ValueChanged="Slider_ValueChanged"/>
         <TextBlock Name="IterationsCount" HorizontalAlignment="Left" Margin="10,110,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="17" Width="134"/>
     </Grid>
 </Window>

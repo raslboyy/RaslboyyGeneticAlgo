@@ -4,6 +4,7 @@ using GeneticAlgo.Shared;
 using GeneticAlgo.Shared.Models;
 using OxyPlot;
 using OxyPlot.Series;
+using System.Buffers;
 
 namespace GeneticAlgo.UIShared;
 

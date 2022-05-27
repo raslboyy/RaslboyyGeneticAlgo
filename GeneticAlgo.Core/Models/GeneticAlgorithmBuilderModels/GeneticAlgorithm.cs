@@ -2,11 +2,19 @@
 {
     public class GeneticAlgorithm : GeneticAlgorithmAbstract
     {
-        public double KillRate { get; set; } = 0.7;
+        public double KillRate { get; set; } = 0.6;
         public double CrossingRate { get; set; } = 0.4;
-        public double MutationAddGenCoefficient { get; set; } = 0.2;
-        public double RandomSurviveRate { get; set; } = 0.1;
-        public GeneticAlgorithm() { }
+        public double MutationAddGenCoefficient { get; set; } = 0.3;
+        public double RandomSurviveRate { get; set; } = 0.2;
+        public GeneticAlgorithm() 
+        {
+            for (int i = 0; i < 0; i++)
+            {
+                CurrentPopulation.Kill(FitnessFunction, 0.5);
+                CurrentPopulation.Mutate(MutationAlgorithm, 0.5, 0.1);
+            }
+            
+        }
 
         public override void Killing()
         {

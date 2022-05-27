@@ -1,7 +1,7 @@
 {
   "Dt": 1000,
   "FMax": 1,
-  "Eps": 0.0001,
+  "Eps": 0.01,
   "Circles": [
     {
       "Center": {

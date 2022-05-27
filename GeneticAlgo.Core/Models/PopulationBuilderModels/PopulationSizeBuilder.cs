@@ -11,7 +11,7 @@ namespace GeneticAlgo.Core.Models.PopulationBuilderModels
     {
         public T SetSize(int size)
         {
-            Population.Size = size;
+            Size = size;
             return (T)this;
         }
     }

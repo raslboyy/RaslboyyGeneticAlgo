@@ -1,15 +1,18 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using Serilog;
 
+using GeneticAlgo.Core.Models.GeneticAlgorithmBuilderModels;
 using GeneticAlgo.Shared;
-using GeneticAlgo.Shared.Models;
-using GeneticAlgo.Shared.Tools;
-using Serilog;
 
 Logger.Init();
-Log.Information("Start console polygon");
-var dummyExecutionContext = new DummyExecutionContext(10, 10, 3);
-dummyExecutionContext.Reset();
-await dummyExecutionContext.ExecuteIterationAsync();
-Log.Information("Polygon end");
 
-Console.WriteLine(Configuration.GetInstance().Circles[0]);
+var algorithm = new GeneticAlgorithm();
+int iterationCount = 1;
+var result = algorithm.Iteration();
+while (result.Result == GeneticAlgo.Core.SharedModels.IterationResult.IterationFinished)
+{
+    result = algorithm.Iteration();
+    iterationCount++;
+}
+
+Log.Information($"{result.Result} {iterationCount}");
+Console.WriteLine($"{result.Result} {iterationCount}");

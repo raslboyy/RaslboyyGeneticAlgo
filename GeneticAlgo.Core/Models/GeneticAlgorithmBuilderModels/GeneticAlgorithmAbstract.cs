@@ -22,17 +22,17 @@ namespace GeneticAlgo.Core.Models.GeneticAlgorithmBuilderModels
         {
             var statistic = Selection();
 
-            Log.Debug(((Population)CurrentPopulation).ToString());
+            //Log.Debug(((Population)CurrentPopulation).ToString());
 
             Crossing();
 
             Mutation();
 
-            Log.Debug(((Population)CurrentPopulation).ToString());
+            //Log.Debug(((Population)CurrentPopulation).ToString());
 
             CountIteration++;
 
-            if (CountIteration == MaxCountIteration)
+            if (CountIteration >= MaxCountIteration)
             {
                 statistic.Result = IterationResult.SolutionCannotBeFound;
             }

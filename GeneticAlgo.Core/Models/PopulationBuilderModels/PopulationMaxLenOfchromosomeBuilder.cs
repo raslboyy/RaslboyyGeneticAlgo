@@ -11,7 +11,7 @@ namespace GeneticAlgo.Core.Models.PopulationBuilderModels
     {
         public T SetMaxLenOfChromosome(int len)
         {
-            Population.MaxLenOfChromosome = len;
+            Len = len;
             return (T)this;
         }
     }

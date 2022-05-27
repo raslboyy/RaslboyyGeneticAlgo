@@ -8,15 +8,11 @@ namespace GeneticAlgo.Core.Models.PopulationBuilderModels
 {
     public class PopulationBuilder
     {
-        private readonly MyRandom _random = MyRandom.GetInstance();
-        protected Population Population { get; } = new ();
+        protected int Len { get; set; }
+        protected int Size { get; set; }
         public Population GetResult()
         {
-            for (int i = 0; i < Population.Size; i++)
-            {
-                Population.Chromosomes.Add(new Chromosome(_random.Next(1, Population.MaxLenOfChromosome + 1)));
-            }
-            return Population;
+            return new Population(Size);
         }
     }
 }

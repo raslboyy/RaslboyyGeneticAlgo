@@ -10,7 +10,7 @@ namespace GeneticAlgo.Core.Models.GeneticAlgorithmBuilderModels
     public class GeneticAlgorithmPopulationBuilder<T> : GeneticAlgorithmBuilder
         where T : GeneticAlgorithmPopulationBuilder<T>
     {
-        void SetPopulation(PopulationBuilder populationBuilder)
+        public void SetPopulation(PopulationBuilder populationBuilder)
         {
             GeneticAlgorithm.CurrentPopulation = populationBuilder.GetResult();
         }

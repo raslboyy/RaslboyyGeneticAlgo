@@ -10,7 +10,7 @@ namespace GeneticAlgo.Core.Models
         {
             Gens = new List<Gen>();
             for (int i = 0; i < n; i++)
-                Gens.Add(new Gen(1.0 / n, 1.0 / n));
+                Gens.Add(new Gen(0, 0));
         }
 
         public Chromosome(Chromosome other)

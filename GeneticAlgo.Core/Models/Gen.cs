@@ -6,6 +6,7 @@ namespace GeneticAlgo.Core.Models
     {
         private readonly MyRandom _random = MyRandom.GetInstance();
         public Vector R { get; private set; }
+        public double X { get { return R.X; } }
         public Gen(double x, double y)
         {
             R = new Vector(x, y);
@@ -23,6 +24,15 @@ namespace GeneticAlgo.Core.Models
             R = R.RandomRotate();
             R = R.RandomLen();
             return this;
+        }
+
+        public Gen Copy()
+        {
+            var g = new Gen
+            {
+                R = R.Copy()
+            };
+            return g;
         }
     }
 }

@@ -4,7 +4,7 @@ namespace GeneticAlgo.Core.SharedModels;
 public class Configuration
 {
     private static Configuration? instance;
-    private static readonly string pathToConfiguration = "..\\..\\..\\..\\configs\\gen-algo-config-example.json";
+    private static readonly string pathToConfiguration = "C:\\Users\\kWX1136994\\Desktop\\tp\\RaslboyyGeneticAlgo\\configs\\gen-algo-config-1.json";
     public int Dt { get; set; }
     public double FMax { get; set; }
     public double Eps { get; set; }

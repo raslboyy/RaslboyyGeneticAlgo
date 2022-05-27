@@ -1,9 +1,5 @@
 ﻿using GeneticAlgo.Core.SharedModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Buffers;
 
 namespace GeneticAlgo.Core.Models.PopulationBuilderModels
 {
@@ -11,11 +7,19 @@ namespace GeneticAlgo.Core.Models.PopulationBuilderModels
     {
         private readonly MyRandom _random = MyRandom.GetInstance();
         public List<Chromosome> Chromosomes { get; private set;  } = new ();
-        public int MaxLenOfChromosome { get; set; } = 2000;
-        public int Size { get; set; } = 200;
+        public int MaxLenOfChromosome { get; set; } = 1000;
+        public int Size { get; set; } = 500;
         public List<Chromosome> RandomSurvived { get; private set; } = new ();
         public Population()
         {
+            for (int i = 0; i < Size; i++)
+            {
+                Chromosomes.Add(new Chromosome(10));
+            }
+        }
+        public Population(int size)
+        {
+            Size = size;
             for (int i = 0; i < Size; i++)
             {
                 Chromosomes.Add(new Chromosome(_random.Next(2, MaxLenOfChromosome + 1)));
