@@ -13,11 +13,17 @@
 
 --------
 
-![ezgif-2-43a74b66d2](https://user-images.githubusercontent.com/33222839/169856157-a6310aed-fc11-49cb-ab14-6a78c6e7baea.gif)
+![MainWindow 2022-06-12 15-35-32](https://user-images.githubusercontent.com/33222839/173233630-4231bd09-6cbe-48fb-a82e-0775e84af360.gif)
 
 --------
 
-![ezgif-2-e170e853f6](https://user-images.githubusercontent.com/33222839/169855735-d9d0c518-7c14-4a94-be3f-0b70595f6328.gif)
+![MainWindow 2022-06-12 15-34-32](https://user-images.githubusercontent.com/33222839/173233662-c7a43ec7-4669-4313-aff4-ceb3123a4acf.gif)
+
+--------
+
+![MainWindow 2022-06-12 15-33-48](https://user-images.githubusercontent.com/33222839/173233680-9ba64186-9e8d-4a30-bd49-87228c2341ef.gif)
+
+--------
 
 # Анализ
 ## Бенчмарки
